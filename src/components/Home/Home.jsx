@@ -6,7 +6,8 @@ import { testimonials , longTalks } from '../../data/testimonial'
 import Logo from '../../assets/logo/logo.png'
 import { NavLink , Link} from 'react-router-dom'
 import { Icon } from '@iconify/react'
-// import Mother from '../../assets/testimonialImages/footer-img.webp'
+import Pregnancy  from '../../assets/Pregnancy-illustrations/pregnancy-test.svg'
+import HappyBaby  from '../../assets/Pregnancy-illustrations/happyBaby.svg'
 
 const Home = () => {
 
@@ -39,15 +40,19 @@ const Home = () => {
         </nav>
       </header>
         <section className='slide-section'>
-          <Carousel>      
+          <Carousel
+            variant='dark'
+          >      
           {
             slideImages.map((image, idx)=>(
                 <Carousel.Item key={idx} className='slide-image'>
-                  <img
-                    className="d-block w-100"
-                    src={image.imageUrl}
-                    alt={image.caption}
-                  />
+                  <div className="image-container">
+                    <img
+                      className=""
+                      src={image.imageUrl}
+                      alt={image.caption}
+                    />
+                  </div>
                   <Carousel.Caption>
                     <h3>{image.titleText}</h3>
                     <p>{image.subText}</p>
@@ -86,6 +91,9 @@ const Home = () => {
             </Carousel>
           </section>
           <section className="section-two">
+              <div className="illustration">
+                <img src={Pregnancy} alt="" />
+              </div>
               {
                 longTalks.map((talk, idx)=>(
                   <div className="block" key={idx}>
@@ -98,7 +106,9 @@ const Home = () => {
       </main>
       <footer>
         <section className="section-one">
-          
+          <div >
+            <img src={HappyBaby} className='happy-woman'/>
+          </div>
         </section>
         <section className="section-two">
           <div className="enquiry">
@@ -116,28 +126,35 @@ const Home = () => {
                 <input type="tel" id="phone"/>
               </div>
               <div className="form-box">
+                <label htmlFor="subject">Subject</label>
+                <input type="text" id="subject"/>
+              </div>
+              <div className="form-box">
                 <label htmlFor="message">Message</label>
-                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <textarea name="message" id="message" ></textarea>
               </div>
               <button className="btn">
                 Submit
               </button>
             </form>
           </div>    
-          <div className="social-courtesy">
-              <div className="socials">
-                <Link>
-                  <Icon icon="ic:outline-whatsapp" color="#fdfaf5" />
-                </Link>
-                <Link>
-                  <Icon icon="mdi:instagram" color="#fdfaf5" />
-                </Link>
-                <Link>
-                  <Icon icon="mdi:linkedin" color="#fdfaf5" />
-                </Link>
-              </div>
-              <div className="courtesy"></div>
-          </div>
+        </section>
+        <section className="section-three">
+            <div>
+              .small-links
+            </div>
+            <div className="socials">
+              <Link>
+                <Icon icon="ic:outline-whatsapp" className='footer-links' />
+              </Link>
+              <Link>
+                <Icon icon="mdi:instagram" className='footer-links' />
+              </Link>
+              <Link>
+                <Icon icon="mdi:linkedin" className='footer-links' />
+              </Link>
+            </div>
+            <div className="courtesy"></div>
         </section>
       </footer>
     </div>
