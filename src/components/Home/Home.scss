@@ -1,7 +1,7 @@
 @import '../generalvariables.scss';
 
 .landing-page{
-
+    font-family: $poppins-font;
     header{
         display: flex;
         justify-content: space-between;
@@ -13,15 +13,59 @@
         z-index: 10;
         width: 100%;
         background-color: $header-bg;
+        box-shadow:  -2px 0px 8px hsl(180, 43%, 80%);
         .logo{
-            height: 40px;
+            height: 42px;
+            width:50px;
+            margin: auto 0;
         }
         nav{
+            align-self: flex-end;
+            align-content: center;
             ul{
                 display: flex;
-                list-style-type: none;
-                align-items: center;
-                gap: 3rem;
+                gap: 2rem;
+                margin: 20px 0 10px;
+                .nav-link{
+                    color: #134D4E;
+                    position: relative;
+                    padding: 5px 10px;
+                    &:before{
+                        content:"";
+                        position: absolute;
+                        height: 2px;
+                        bottom: 0;
+                        right: 0;
+                        background-color: #134D4E;
+                        transform: scaleX(0);
+                        transform-origin: top left;
+                        transition: transform 0.3s;
+                    }
+                    &:after {
+                        content:'';
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        top: 0;
+                        right: 0;
+                        background-color: #134D4E;
+                        transform: scaleX(0);
+                        transform-origin: bottom right;
+                        transition: transform 0.3s;
+                    }
+
+                    &:hover{
+                        &:before{
+                            transform-origin: top right;
+                            transform: scaleX(1);
+                            width: 100%;
+                        }
+                        &:after {
+                            transform-origin: bottom left;
+                            transform: scaleX(1);
+                        }
+                    }
+                }
             }   
         }
     }
@@ -46,6 +90,15 @@
                     object-position: center;
                 }
             }
+            h3{
+                font-size: xx-large;
+                margin-bottom: 2rem;
+            }
+            p{
+                font-weight: 300;
+                font-size: large;
+                margin-bottom: 2rem;
+            }
         }
     }
     main{
@@ -56,8 +109,11 @@
         padding: 2.5rem 2rem;
     
         .section-one{
+            box-shadow: $card-shadow;
+            border-radius: 8px;
+            padding: 1rem;
+            color: #134D4E;
             .carousel-block{
-                    background-color: $accent-color;
                     padding-bottom: 3rem;
                 .img{
                     img{
@@ -75,36 +131,50 @@
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             gap: 1rem;
-            background-color: yellow;
-            padding: 1rem;
+            position: relative;
+            width: 100%;
+            z-index: 8;
+            padding: 1rem 1rem 2rem;
+            background-color: rgb(196, 251, 255);
             .block{
+                font-family: $Roboto-font;
                 padding: 2rem 1rem;
-                h3{
-                    font-weight: 600;
-                }
+                color: #134D4E;
                 text-align: center;
-                border: 1px solid black;
+                border-bottom: 1px solid #1E7A7B;
+                h1{
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    margin-bottom: 1rem;
+                }
+                p{
+                    font-family: $poppins-font;
+                    min-width: 250px;
+                    max-width: 400px;
+                    margin: 0 auto;
+
+                }
             }
         }
     }
-    footer{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        .section-one{
-            background-image: url('../../assets/testimonialImages/footer-img.webp');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            filter:brightness(40%)
-        }
-        .section-two{
-            background-color: green;
-            padding: 2rem;
 
+    footer{
+        display:flex;
+        flex-direction: column;
+
+        .section-two{
+            padding: 2rem;
+            
             form{
-                background-color: red;
-                display: grid;
-                
+                color: #134D4E;
+                background-color: $accent-color;
+                display: flex;
+                flex-direction: column;
+                gap: .95rem;
+                .form-box{
+                    display: flex;
+                    flex-direction: column;
+                }
             }
         }
     }

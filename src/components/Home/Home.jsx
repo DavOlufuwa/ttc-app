@@ -6,11 +6,11 @@ import { testimonials , longTalks } from '../../data/testimonial'
 import Logo from '../../assets/logo/logo.png'
 import { NavLink , Link} from 'react-router-dom'
 import { Icon } from '@iconify/react'
-import Mother from '../../assets/testimonialImages/footer-img.webp'
+// import Mother from '../../assets/testimonialImages/footer-img.webp'
 
 const Home = () => {
 
-  const func = ({isActive}) => isActive ? "active-link" : null
+  const func = ({isActive}) => isActive ? "nav-link active-link" : " nav-link"
 
   return (
     <div className='landing-page'>
@@ -60,6 +60,7 @@ const Home = () => {
       <main>
           <section className="section-one">
             <Carousel 
+              variant='dark'
               className='' 
               interval={10000} 
               fade={true}
@@ -118,6 +119,9 @@ const Home = () => {
                 <label htmlFor="message">Message</label>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
               </div>
+              <button className="btn">
+                Submit
+              </button>
             </form>
           </div>    
           <div className="social-courtesy">
