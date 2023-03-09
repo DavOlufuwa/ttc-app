@@ -1,0 +1,87 @@
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$accent-color:#40BFC0;
+$btn-color:#2EBBBC;
+$border-box-shadow: inset 0px 0px 0px 1px $btn-color;
+$sub-headers: #035454;
+$color-white:#FFF;
+$header-bg: #FDFAF5;
+$color-black: #00000038;
+$btn-radius:12px;
+$input-radius:8px;
+$input-borders:2px solid #40BFC0; 
+$box-shadow:2px 7px 14px rgba(47, 108, 136, 0.14);
+$background-gradient:linear-gradient(179.99deg, #E5F2F1 30.09%, #F0F2F6 56.82%);
+$app-gradient:linear-gradient(180deg, #DFF7F5 31.89%, #F0F2F6 118.57%);
+
+$green-gradient: linear-gradient(180deg, #00B0B1 30.05%, #23DADB 100%);
+
+$poppins-font: 'Poppins', sans-serif;
+$proxima-nova: 'Proxima Nova', sans-serif;
+$Roboto-font: 'Roboto', sans-serif;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+input{
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+input.auth{
+    padding-left: 48px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+// input[type='date'] {
+//     &::after{
+//         content: attr(placeholder)
+//     }
+//   }
+
+.btn{
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    background-color: $btn-color;
+    padding: .85rem 4rem;
+    color: $color-white;
+    font-weight: 600;
+    border-radius: $btn-radius;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+
+    &:hover,&:focus{
+        background-color: $color-white;
+        box-shadow:  inset 0px 0px 0px 1px $btn-color;
+        color: $btn-color;
+    }
+}
+
+.btn-disabled{
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    background-color: #808080;
+    padding: .85rem 4rem;
+    color: $color-white;
+    font-weight: 600;
+    border-radius: $btn-radius;
+    cursor: pointer;
+    transition: 0.3s ease;
+}

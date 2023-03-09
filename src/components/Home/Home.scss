@@ -1,0 +1,111 @@
+@import '../generalvariables.scss';
+
+.landing-page{
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        background-color: $header-bg;
+        .logo{
+            height: 40px;
+        }
+        nav{
+            ul{
+                display: flex;
+                list-style-type: none;
+                align-items: center;
+                gap: 3rem;
+            }   
+        }
+    }
+    .slide-section{
+        margin-top: 4rem;
+        .slide-image{
+            height: 80vh;
+            img{
+                display: block;
+                filter: brightness(40%);
+                object-fit: cover;
+                object-position: right;
+            }
+            &:first-of-type{
+                img{
+                    object-position: left;
+                    object-fit: center;
+                }
+            }
+            &:last-of-type{
+                img{
+                    object-position: center;
+                }
+            }
+        }
+    }
+    main{
+        background-color: $header-bg;
+        min-height: 93vh;
+        display: grid;
+        gap: 2rem;
+        padding: 2.5rem 2rem;
+    
+        .section-one{
+            .carousel-block{
+                    background-color: $accent-color;
+                    padding-bottom: 3rem;
+                .img{
+                    img{
+                        height: 150px;
+                        width: 150px;
+                        margin: 3rem auto;
+                    }
+                }
+                .content{
+                    text-align: center;
+                }
+            }
+        }
+        .section-two{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+            background-color: yellow;
+            padding: 1rem;
+            .block{
+                padding: 2rem 1rem;
+                h3{
+                    font-weight: 600;
+                }
+                text-align: center;
+                border: 1px solid black;
+            }
+        }
+    }
+    footer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .section-one{
+            background-image: url('../../assets/testimonialImages/footer-img.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            filter:brightness(40%)
+        }
+        .section-two{
+            background-color: green;
+            padding: 2rem;
+
+            form{
+                background-color: red;
+                display: grid;
+                
+            }
+        }
+    }
+}
