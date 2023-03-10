@@ -39,18 +39,22 @@ export const testimonials = [
 export const longTalks=[
     {
         title : "Trying to concieve",
-        content: "TTC makes it easy to see top rated medical providers for consultations and treatments"
+        content: "TTC makes it easy to see top rated medical providers for consultations and treatments",
+        supportImage:"./src/assets/Pregnancy-illustrations/doctors-list.svg"
     },
     {
         title: "Book Appointments",
-        content: "Schedule an appointment with one of our experienced gynecologists. You are assured of a timely response"
+        content: "Schedule an appointment with one of our experienced gynecologists. You are assured of a timely response",
+        supportImage:"./src/assets/Pregnancy-illustrations/gynecologists.svg"
     },
     {
         title: "Virtual Care", 
-        content: "Straight access to a doctor through a phone call, chat or video call"
+        content: "Straight access to a doctor through a phone call, chat or video call",
+        supportImage:"./src/assets/Pregnancy-illustrations/phone.svg"
     },
     {
         title: "Medication",
-        content: "The solution to your challenge awaits you at TTC"
+        content: "The solution to your challenge awaits you at TTC",
+        supportImage:"./src/assets/Pregnancy-illustrations/midwives.svg"
     }
 ]

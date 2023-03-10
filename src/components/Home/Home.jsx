@@ -1,18 +1,38 @@
 import React from 'react'
 import './Home.scss'
 import { Carousel} from 'react-bootstrap'
+import { Carousel as ca} from 'react-multi-carousel'
+import "react-multi-carousel/lib/styles.css"
 import { slideImages } from '../../data/slideImages'
 import { testimonials , longTalks } from '../../data/testimonial'
 import Logo from '../../assets/logo/logo.png'
 import { NavLink , Link} from 'react-router-dom'
 import { Icon } from '@iconify/react'
-import Pregnancy  from '../../assets/Pregnancy-illustrations/pregnancy-test.svg'
 import HappyBaby  from '../../assets/Pregnancy-illustrations/happyBaby.svg'
 
 const Home = () => {
 
   const func = ({isActive}) => isActive ? "nav-link active-link" : " nav-link"
 
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
   return (
     <div className='landing-page'>
       <header>
@@ -61,46 +81,48 @@ const Home = () => {
         </section>
       <main>
           <section className="section-one">
-            <Carousel 
-              variant='dark'
-              className='' 
-              interval={10000} 
-              fade={true}
-              
-              >
-              {
-                testimonials.map((test, idx)=>(
-                  <Carousel.Item key={idx} className="carousel-block">
-                    <div className="img">
-                      <img src={test.imgUrl} alt="" />
-                    </div>
-                    <div className="content">
-                      <h3>
-                        {test.status}
-                      </h3>
-                      <p>
-                        {test.testimony}
-                      </p>
-                    </div>
-                  </Carousel.Item>
-                ))
-              }
-            </Carousel>
-          </section>
-          <section className="section-two">
-              <div className="illustration">
-                <img src={Pregnancy} alt="" />
-              </div>
               {
                 longTalks.map((talk, idx)=>(
                   <div className="block" key={idx}>
-                    <h1>{talk.title}</h1>
-                    <p>{talk.content}</p>
+                    <div>
+                      <img src={talk.supportImage} />
+                    </div>
+                    <div>
+                      <h1>{talk.title}</h1>
+                      <p>{talk.content}</p>
+                    </div>
                   </div>
                 ))
               }
           </section>
       </main>
+      <section className="testimony">
+        <Carousel 
+          variant='dark'
+          className='' 
+          interval={10000} 
+          fade={true}
+          
+          >
+          {
+            testimonials.map((test, idx)=>(
+              <Carousel.Item key={idx} className="carousel-block">
+                <div className="img">
+                  <img src={test.imgUrl} alt="" />
+                </div>
+                <div className="content">
+                  <h3>
+                    {test.status}
+                  </h3>
+                  <p>
+                    {test.testimony}
+                  </p>
+                </div>
+              </Carousel.Item>
+            ))
+          }
+        </Carousel>
+      </section>
       <section className='newsletter'>
         <div className='heading'>
           <h3>SIGN UP FOR OUR NEWSLETTER</h3>
