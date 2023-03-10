@@ -102,28 +102,6 @@
         gap: 2rem;
         padding: 2.5rem 2rem;
         
-        // .section-one{
-        //     box-shadow: $card-shadow;
-        //     border-radius: 8px;
-        //     padding: 1rem;
-        //     color: #134D4E;
-        //     .carousel-block{
-        //             padding-bottom: 3rem;
-        //         .img{
-        //             img{
-        //                 height: 150px;
-        //                 width: 150px;
-        //                 margin: 3rem auto;
-        //             }
-        //         }
-        //         .content{
-        //             text-align: center;
-        //             p{
-        //                 color:#248b8d;
-        //             }
-        //         }
-        //     }
-        // }
         .section-one{   
             .block{
                 display:flex;
@@ -151,6 +129,28 @@
                             margin: 0 auto;
                         }
                     }
+                }
+            }
+        }
+    }
+    .testimony{
+        box-shadow: $card-shadow;
+        border-radius: 8px;
+        padding: 1rem;
+        color: #134D4E;
+        .carousel-block{
+                padding-bottom: 3rem;
+            .img{
+                img{
+                    height: 150px;
+                    width: 150px;
+                    margin: 3rem auto;
+                }
+            }
+            .content{
+                text-align: center;
+                p{
+                    color:#248b8d;
                 }
             }
         }

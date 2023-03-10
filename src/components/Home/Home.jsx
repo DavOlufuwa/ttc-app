@@ -1,8 +1,8 @@
 import React from 'react'
 import './Home.scss'
 import { Carousel} from 'react-bootstrap'
-import { Carousel as ca} from 'react-multi-carousel'
-import "react-multi-carousel/lib/styles.css"
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import { slideImages } from '../../data/slideImages'
 import { testimonials , longTalks } from '../../data/testimonial'
 import Logo from '../../assets/logo/logo.png'
@@ -15,24 +15,35 @@ const Home = () => {
   const func = ({isActive}) => isActive ? "nav-link active-link" : " nav-link"
 
   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
+    0: { 
+        items: 1
     },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
+    568: { 
+        items: 2
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
+    1024: {
+        items: 3, 
+        itemsFit: 'contain'
     },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
   };
+
+  const items = testimonials.map((test, idx)=>(
+    <div key={idx} className="carousel-block">
+      <div className="img">
+        <img src={test.imgUrl} alt="" />
+      </div>
+      <div className="content">
+        <h3>
+          {test.status}
+        </h3>
+        <p>
+          {test.testimony}
+        </p>
+      </div>
+    </div>
+  ))
+
+
   return (
     <div className='landing-page'>
       <header>
@@ -97,31 +108,6 @@ const Home = () => {
           </section>
       </main>
       <section className="testimony">
-        <Carousel 
-          variant='dark'
-          className='' 
-          interval={10000} 
-          fade={true}
-          
-          >
-          {
-            testimonials.map((test, idx)=>(
-              <Carousel.Item key={idx} className="carousel-block">
-                <div className="img">
-                  <img src={test.imgUrl} alt="" />
-                </div>
-                <div className="content">
-                  <h3>
-                    {test.status}
-                  </h3>
-                  <p>
-                    {test.testimony}
-                  </p>
-                </div>
-              </Carousel.Item>
-            ))
-          }
-        </Carousel>
       </section>
       <section className='newsletter'>
         <div className='heading'>
