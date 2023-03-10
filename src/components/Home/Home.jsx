@@ -104,6 +104,27 @@ const Home = () => {
               }
           </section>
       </main>
+      <section className='newsletter'>
+        <div className='heading'>
+          <h3>SIGN UP FOR OUR NEWSLETTER</h3>
+          <p>We're about empowering families with the latest fertility news, lets help you stay up to date</p>
+        </div>
+          <form>
+            <div className="form-box">
+                <label htmlFor="fullname">Full Name</label>
+                <input type="text" id="fullname" />
+              </div>
+              <div class="form-box">
+                <label for="email">Email</label>
+                <input type="email" id="email"/>
+              </div>
+              <div className='form-btn'>
+                <button className='sign up btn'>
+                  Sign Up
+                </button>
+              </div>
+          </form>
+      </section>
       <footer>
         <section className="section-one">
           <div >
