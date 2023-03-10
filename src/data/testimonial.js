@@ -43,7 +43,7 @@ export const longTalks=[
     },
     {
         title: "Book Appointments",
-        content: "Schedule an appointment with one of our experienced gynecologists"
+        content: "Schedule an appointment with one of our experienced gynecologists. You are assured of a timely response"
     },
     {
         title: "Virtual Care", 

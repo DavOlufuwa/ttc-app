@@ -139,22 +139,35 @@ const Home = () => {
             </form>
           </div>    
         </section>
-        <section className="section-three">
-            <div>
-              .small-links
+        <section className="section-three"> 
+            <div className="socials-links">
+              <Link className='text-links'>
+                About Us
+              </Link>
+              <Link className='text-links'>
+                Contact us
+              </Link>
+              <Link className='text-links'>
+                Privacy policy
+              </Link>
+              <Link className='text-links'>
+                Disclaimer
+              </Link>
             </div>
             <div className="socials">
-              <Link>
-                <Icon icon="ic:outline-whatsapp" className='footer-links' />
+              <Link className='social-links'>
+                <Icon icon="ic:outline-whatsapp" width={24} height={24} className="icons" />
               </Link>
-              <Link>
-                <Icon icon="mdi:instagram" className='footer-links' />
+              <Link className='social-links'>
+                <Icon icon="mdi:instagram"  width={24} height={24} className="icons"/>
               </Link>
-              <Link>
-                <Icon icon="mdi:linkedin" className='footer-links' />
+              <Link className='social-links'>
+                <Icon icon="mdi:linkedin"  width={24} height={24} className="icons"/>
               </Link>
             </div>
-            <div className="courtesy"></div>
+            <div className="courtesy">
+              &copy;2023 Trying To Concieve
+            </div>
         </section>
       </footer>
     </div>

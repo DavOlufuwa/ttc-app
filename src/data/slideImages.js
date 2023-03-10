@@ -8,7 +8,7 @@ export const slideImages = [
     {
         caption: "image-two",
         imageUrl: "src/assets/Pregnancy-illustrations/gynecologists.svg",
-        titleText:"Book Appointments",
+        titleText:"Appointments",
         subText: "Schedule an appointment with one of our experienced gynecologists"
  
     },
