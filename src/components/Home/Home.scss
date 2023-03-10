@@ -71,27 +71,27 @@
     }
     .slide-section{
         margin-top: 6rem;
-    
         .slide-image{
             height: 80vh;
-            
-            .image-container{
-                padding: 2rem 2rem 0 2rem;
-                
-                img{
-                    display: block;
-                    max-height: 300px;
-                }
+            img{
+                display: block;
+                filter: brightness(40%);
+                object-fit: cover;
+                object-position: center;
             }
             h3{
-                font-size: xx-large;
-                color:#134D4E;    
+                font-size: xx-large;    
             }
             p{
-                color:#134D4E;
                 font-weight: 300;
                 font-size: large;
                 
+            }
+
+            &:first-of-type{
+                img{
+                    object-fit: cover;
+                }
             }
         }
     }
@@ -282,9 +282,9 @@
 
 @media screen and (min-width:1200px){
     .landing-page{
-        .slide-section{
-            padding: 0 8.75rem;
-        }
+        // .slide-section{
+        //     padding: 0 8.75rem;
+        // }
         main{
             padding: 2.5rem 8.75rem;
             grid-template-columns: repeat(2, 1fr);

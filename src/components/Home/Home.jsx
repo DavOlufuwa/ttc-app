@@ -41,18 +41,15 @@ const Home = () => {
       </header>
         <section className='slide-section'>
           <Carousel
-            variant='dark'
           >      
           {
             slideImages.map((image, idx)=>(
                 <Carousel.Item key={idx} className='slide-image'>
-                  <div className="image-container">
                     <img
-                      className=""
+                      className="d-block w-100"
                       src={image.imageUrl}
                       alt={image.caption}
                     />
-                  </div>
                   <Carousel.Caption>
                     <h3>{image.titleText}</h3>
                     <p>{image.subText}</p>
