@@ -68,6 +68,15 @@
                 }
             }   
         }
+        .mobile {
+            display: none;
+            .menu-btn{
+                color: $accent-color;
+                height: 40px;
+                width: 40px;
+            }
+            
+        }
     }
     .slide-section{
         margin-top: 6rem;

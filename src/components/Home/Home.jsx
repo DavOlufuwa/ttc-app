@@ -8,7 +8,7 @@ import { testimonials , longTalks } from '../../data/testimonial'
 import Logo from '../../assets/logo/logo.png'
 import { NavLink , Link} from 'react-router-dom'
 import { Icon } from '@iconify/react'
-import HappyBaby  from '../../assets/Pregnancy-illustrations/happyBaby.svg'
+
 
 const Home = () => {
 
@@ -78,7 +78,7 @@ const Home = () => {
             </NavLink>
           </ul>
         </nav>
-        <div>
+        <div className='mobile'>
           <Icon 
             icon="ic:baseline-menu" 
             className='menu-btn'
