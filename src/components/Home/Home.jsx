@@ -59,20 +59,31 @@ const Home = () => {
             <NavLink 
               className={func}
             >
-              Index
+              Speak with us
             </NavLink>
             <NavLink 
               className={func}
             >
-              Index
+              What we do
             </NavLink>
             <NavLink 
               className={func}
             >
-              Index
+              Login
+            </NavLink>
+            <NavLink 
+              className={func}
+            >
+              Sign Up
             </NavLink>
           </ul>
         </nav>
+        <div>
+          <Icon 
+            icon="ic:baseline-menu" 
+            className='menu-btn'
+            />
+        </div>
       </header>
         <section className='slide-section'>
           <Carousel
@@ -115,8 +126,8 @@ const Home = () => {
       <AliceCarousel
         autoPlay
         autoPlayStrategy="none"
-        autoPlayInterval={3000}
-        animationDuration={1000}
+        autoPlayInterval={2000}
+        animationDuration={500}
         animationType="fadeout"
         infinite
         mouseTracking
@@ -148,7 +159,7 @@ const Home = () => {
       <footer>
         <section className="section-one">
           <div >
-            <img src={HappyBaby} className='happy-woman'/>
+            WANT TO SPEAK WITH US DIRECTLY, CONTACT US
           </div>
         </section>
         <section className="section-two">
@@ -186,7 +197,7 @@ const Home = () => {
                 About Us
               </Link>
               <Link className='text-links'>
-                Contact us
+                Speak with us
               </Link>
               <Link className='text-links'>
                 Privacy policy

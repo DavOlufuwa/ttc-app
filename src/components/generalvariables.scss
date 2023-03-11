@@ -1,6 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/verdana-pro-cond');
+@import url('https://fonts.cdnfonts.com/css/titillium');
+@import url('https://fonts.cdnfonts.com/css/avenir-next-cyr');
+
 
 $accent-color:#40BFC0;
 $btn-color:#2EBBBC;
@@ -21,6 +25,9 @@ $card-shadow:-2px 0px 10px hsl(180, 43%, 80%);
 $poppins-font: 'Poppins', sans-serif;
 $proxima-nova: 'Proxima Nova', sans-serif;
 $Roboto-font: 'Roboto', sans-serif;
+$verdana-font : 'Verdana Pro Cond', sans-serif;
+$titillium-font: 'Titillium', sans-serif;
+$avenir-font: 'Avenir Next Cyr', sans-serif;
 
 *{
     margin: 0;

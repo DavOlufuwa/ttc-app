@@ -1,12 +1,12 @@
 @import '../generalvariables.scss';
 
 .landing-page{
-    font-family: $poppins-font;
+    font-family: $avenir-font;
     header{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 1.5rem;
+        padding: 1rem 8.75rem;
         position: fixed;
         top: 0;
         left: 0;
@@ -123,7 +123,6 @@
                             margin-bottom: 1rem;
                         }
                         p{
-                            font-family: $poppins-font;
                             min-width: 250px;
                             max-width: 400px;
                             margin: 0 auto;
@@ -139,9 +138,9 @@
         color: #134D4E;
         margin-bottom: 2rem;
         .carousel-block{
-            
             padding: 1rem;
             margin: 0rem 1rem;
+            
             .img{
                 img{
                     height: 150px;
@@ -179,13 +178,23 @@
         display:grid;
         grid-template-columns:repeat(2, 1fr);
         align-items: center;
-        
-
+        background-image: url('../../assets/Pregnancy-illustrations/footer-picture.jpeg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-top: 5rem;
+        color: white;
         .section-one{
-            padding: 4rem 4rem 4rem 8.75rem;
+            div{
+                padding-left: 8.75rem;
+                font-weight: 500;
+                font-size: calc(3.5vw + 1vh);
+            }
         }
+
         .section-two{
             padding: 2rem 8.75rem 2rem 0rem;
+            grid-column: 2 / span 1;
             form{
                 
                 display: grid;
@@ -219,7 +228,7 @@
                 gap: 2rem;
                 .text-links{
                     text-decoration: none;
-                    color: #1E7A7B;
+                    color: inherit;
                     cursor:pointer;
                 }
             }
@@ -227,12 +236,9 @@
                 display: flex;
                 gap:1rem;
                 .icons{
-                    color: #134D4E;
+                    color: #fff;
                     cursor:pointer;
                 }
-            }
-            .courtesy{
-                color: #134D4E;
             }
         } 
     }
@@ -345,6 +351,9 @@
 
 @media screen and (min-width:1200px){
     .landing-page{
+        .testimony{
+            padding: 1rem 8.75rem;
+        }
         .newsletter{
             gap:1rem;
             .heading{
@@ -368,22 +377,23 @@
     }
 }
 
-@media screen and (min-width:1200px){
-    .landing-page{
-        .testimony{
-            padding: 1rem 8.75rem;
-        }
-    }
-}
+
 @media screen and (max-width:1100px){
     .landing-page{
-       
+        
         footer{
             .section-one{
-                padding: 4rem 4rem 4rem 4rem;
-            }
+                div{
+                    padding-left: 2rem;
+                }
+            }  
+            .section-two{
+                padding: 2rem 2rem 2rem 2rem;
+            }  
             .section-three{
                 padding: 2rem 2rem;
+                width: 100%;
+                
             }
         }
     }
@@ -392,20 +402,40 @@
 @media screen and (max-width:900px){
     .landing-page{
         footer{
+
+            
+            display: flex;
+            flex-direction: column;
             .section-one{
-                display: none;
+                text-align: center;
+                font-size: calc(1vw - 1vh);
+                padding-left: 0;
+
             }
             .section-two{
-                grid-column: 1 /span 2;
-                padding: 2rem ;
+                padding: 0;
+                width: 100%;
+                padding: 2rem 4rem;
             }
             .section-three{
-                padding: 2rem 2rem;
+                display: flex;
                 flex-direction: column;
-                padding: 1rem 0;
+                justify-content: center;
                 align-items: center;
                 gap: 2rem;
+                color: white;
+
+                .socials-links{
+                    gap: 2rem;
+                }
+                .socials{
+                    justify-content: flex-start;
+                }
+                .courtesy{
+                    font-size: 10px;
+                }
             }
+
         }
     }
 }
@@ -413,11 +443,8 @@
 
     .landing-page{
         footer{
-            .section-one{
-                display: none;
-            }
+            
             .section-two{
-                grid-column: 1 /span 2;
                 padding: 2rem ;
                 form{               
                     display: flex;
@@ -439,25 +466,13 @@
                 }
             }
             .section-three{
-                padding: 2rem 2rem;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                padding: 1rem 0;
-                gap: 2rem;
-
                 .socials-links{
                     flex-direction: column;
-                    gap: 2rem;
-                }
-                .socials{
-                    justify-content: flex-start;
-                }
-                .courtesy{
-                    grid-column: 1 / span 2;
-                    font-size: 10px;
+                    font-size: 1.25rem;
                 }
             }
         }
+
     }
 }
 
