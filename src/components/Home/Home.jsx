@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.scss'
-import { Carousel} from 'react-bootstrap'
+import { Carousel, Container} from 'react-bootstrap'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { slideImages } from '../../data/slideImages'
@@ -18,13 +18,17 @@ const Home = () => {
     0: { 
         items: 1
     },
-    568: { 
+    600: { 
         items: 2
     },
     1024: {
         items: 3, 
         itemsFit: 'contain'
     },
+    1700:{
+      items:4,
+      itemsFit:'contain'
+    }
   };
 
   const items = testimonials.map((test, idx)=>(
@@ -108,6 +112,17 @@ const Home = () => {
           </section>
       </main>
       <section className="testimony">
+      <AliceCarousel
+        autoPlay
+        autoPlayStrategy="none"
+        autoPlayInterval={3000}
+        animationDuration={1000}
+        animationType="fadeout"
+        infinite
+        mouseTracking
+        items={items}
+        responsive={responsive}
+      />
       </section>
       <section className='newsletter'>
         <div className='heading'>

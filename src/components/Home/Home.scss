@@ -134,12 +134,14 @@
         }
     }
     .testimony{
-        box-shadow: $card-shadow;
         border-radius: 8px;
         padding: 1rem;
         color: #134D4E;
+        margin-bottom: 2rem;
         .carousel-block{
-                padding-bottom: 3rem;
+            
+            padding: 1rem;
+            margin: 0rem 1rem;
             .img{
                 img{
                     height: 150px;
@@ -366,6 +368,13 @@
     }
 }
 
+@media screen and (min-width:1200px){
+    .landing-page{
+        .testimony{
+            padding: 1rem 8.75rem;
+        }
+    }
+}
 @media screen and (max-width:1100px){
     .landing-page{
        
