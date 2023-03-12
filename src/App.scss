@@ -1,6 +1,31 @@
+@import './components/generalvariables.scss';
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
 
+.error-container{
+    font-family: $avenir-font;
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    div{
+        text-align: center;
+        
+        font-size:1.95rem;
+    }
+    img{
+        display: block;
+        max-width: 800px;
+
+
+    }
+}

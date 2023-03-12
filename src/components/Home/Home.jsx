@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.scss'
-import { Carousel, Container} from 'react-bootstrap'
+import { Carousel} from 'react-bootstrap'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { slideImages } from '../../data/slideImages'
@@ -8,12 +8,15 @@ import { testimonials , longTalks } from '../../data/testimonial'
 import Logo from '../../assets/logo/logo.png'
 import { NavLink , Link} from 'react-router-dom'
 import { Icon } from '@iconify/react'
+import {motion} from 'framer-motion'
 
 
 const Home = () => {
-
+  const [menu , setMenu] = useState(false)
   const func = ({isActive}) => isActive ? "nav-link active-link" : " nav-link"
 
+  const bodyTag = document.getElementById('body')
+  bodyTag.style.overflow = menu ? "hidden" : "";
   const responsive = {
     0: { 
         items: 1
@@ -30,6 +33,8 @@ const Home = () => {
       itemsFit:'contain'
     }
   };
+
+  const transition = {type:'spring', duration : 3}
 
   const items = testimonials.map((test, idx)=>(
     <div key={idx} className="carousel-block">
@@ -50,11 +55,11 @@ const Home = () => {
 
   return (
     <div className='landing-page'>
-      <header>
+      <header className={menu && "blocked"}>
         <div className="logo">
           <img src={Logo} alt="" className='logo'/>
         </div>
-        <nav>
+        <nav className={menu && "opened"}>
           <ul>
             <NavLink 
               className={func}
@@ -78,10 +83,12 @@ const Home = () => {
             </NavLink>
           </ul>
         </nav>
-        <div className='mobile'>
+        <div className='mobile'
+          onClick={()=>setMenu(!menu)}
+        >
           <Icon 
-            icon="ic:baseline-menu" 
-            className='menu-btn'
+            icon={menu ? "ic:sharp-close" : "ic:baseline-menu"} 
+            className={menu ? 'menu-btn close' :'menu-btn'}
             />
         </div>
       </header>
@@ -110,13 +117,21 @@ const Home = () => {
               {
                 longTalks.map((talk, idx)=>(
                   <div className="block" key={idx}>
-                    <div>
+                    <motion.div
+                      initial ={{opacity: 0, y: -100}}
+                      transition = {{...transition, duration: 2}}
+                      whileInView = {{opacity: 1, y: 0 }}
+                    >
                       <img src={talk.supportImage} />
-                    </div>
-                    <div>
+                    </motion.div>
+                    <motion.div
+                      initial ={{opacity: 0, x: 100}}
+                      transition = {{...transition, duration: 1}}
+                      whileInView = {{opacity: 1, x: 0 }}
+                    >
                       <h1>{talk.title}</h1>
                       <p>{talk.content}</p>
-                    </div>
+                    </motion.div>
                   </div>
                 ))
               }
@@ -140,20 +155,15 @@ const Home = () => {
           <h3>SIGN UP FOR OUR NEWSLETTER</h3>
           <p>We're about empowering families with the latest fertility news, lets help you stay up to date</p>
         </div>
-          <form>
-            <div className="form-box">
-                <label htmlFor="fullname">Full Name</label>
-                <input type="text" id="fullname" />
-              </div>
-              <div class="form-box">
-                <label for="email">Email</label>
-                <input type="email" id="email"/>
-              </div>
-              <div className='form-btn'>
-                <button className='sign up btn'>
-                  Sign Up
-                </button>
-              </div>
+          <form>      
+            <div class="form-box">
+              <input type="email" id="email" placeholder='Email'/>
+            </div>
+            <div className='form-btn'>
+              <button>
+                Sign Up
+              </button>
+            </div>
           </form>
       </section>
       <footer>
@@ -185,8 +195,8 @@ const Home = () => {
                 <label htmlFor="message">Message</label>
                 <textarea name="message" id="message" ></textarea>
               </div>
-              <button className="btn">
-                Submit
+              <button className='submit'>
+                submit
               </button>
             </form>
           </div>    

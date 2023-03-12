@@ -29,6 +29,8 @@ $verdana-font : 'Verdana Pro Cond', sans-serif;
 $titillium-font: 'Titillium', sans-serif;
 $avenir-font: 'Avenir Next Cyr', sans-serif;
 
+$deep-green: #134D4E;
+
 *{
     margin: 0;
     padding: 0;
@@ -92,4 +94,36 @@ input.auth{
     border-radius: $btn-radius;
     cursor: pointer;
     transition: 0.3s ease;
+}
+
+.form-btn{
+    button{
+        height:42px;
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        background-color:#0199A7;
+        color: white;
+        font-weight: 200;
+        transition:0.3s;       
+        &:hover{
+            font-weight: 700;
+            background-color: #24787A;
+        }
+    }
+}
+
+button.submit{
+    height:42px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color:#0199A7;
+    color: white;
+    font-weight: 200;
+    transition:0.3s;       
+    &:hover{
+        font-weight: 700;
+        background-color: #24787A;
+    }
 }
