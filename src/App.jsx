@@ -5,6 +5,7 @@ import { Route, createBrowserRouter, createRoutesFromElements, Routes, RouterPro
 
 import Error from './components/Error'
 import HomeLayout from './components/HomeLayout/HomeLayout'
+import Blog from './components/Blog/Blog'
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -14,6 +15,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       errorElement={<Error/>}
     >
       <Route index element={<Home />}/>
+      <Route path='Blog' element={<Blog />}/>
     </Route>
 ))
 

@@ -5,14 +5,15 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { slideImages } from '../../data/slideImages'
 import { testimonials , longTalks } from '../../data/testimonial'
-
 import { Link} from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import {motion} from 'framer-motion'
+import { blogData } from '../../data/blog';
 
 
 const Home = () => {
   const [menu , setMenu] = useState(false)
+  const [blog , setBlog ] = useState(blogData)
 
   const bodyTag = document.getElementById('body')
   bodyTag.style.overflow = menu ? "hidden" : "";
@@ -50,6 +51,9 @@ const Home = () => {
       </div>
     </div>
   ))
+
+
+
 
 
   return (
@@ -101,17 +105,35 @@ const Home = () => {
       </main>
       <section className="testimony">
       <div className='heading'>What our clients say about us</div>
-      <AliceCarousel
-        autoPlay
-        autoPlayStrategy="none"
-        autoPlayInterval={2000}
-        animationDuration={500}
-        animationType="fadeout"
-        infinite
-        mouseTracking
-        items={items}
-        responsive={responsive}
-      />
+        <AliceCarousel
+          autoPlay
+          autoPlayStrategy="none"
+          autoPlayInterval={2000}
+          animationDuration={500}
+          animationType="fadeout"
+          infinite
+          mouseTracking
+          items={items}
+          responsive={responsive}
+        />
+      </section>
+      <section className='blog-section'>
+      <div className='heading'>Check out our blog posts</div>
+          {blog.slice(0, 3).map((article)=>(
+          <div 
+            key={article.id} 
+            className='blog-card'
+          >
+            <div className='blog-image'>
+              <img src={article.image}/>
+            </div>
+            <div className='content'>
+              <div className='title'>{article.title}</div>
+              <div className='date'>{article.date}</div>
+              <Link className='blog-link'>read post</Link>
+            </div>
+          </div>
+        ))}
       </section>
       <section className='newsletter'>
         <div className='heading'>

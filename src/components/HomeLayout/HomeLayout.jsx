@@ -32,6 +32,14 @@ const HomeLayout = () => {
             <NavLink 
               className={func}
               onClick={()=>setMenu(!menu)}
+              to="Blog"
+            >
+              Our Blog
+            </NavLink>
+            <NavLink 
+              className={func}
+              onClick={()=>setMenu(!menu)}
+              
             >
               Login
             </NavLink>
@@ -52,7 +60,6 @@ const HomeLayout = () => {
             />
         </div>
       </header>
-      main
         <Outlet/>
     </div>
   )
