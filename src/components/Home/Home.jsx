@@ -5,15 +5,14 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { slideImages } from '../../data/slideImages'
 import { testimonials , longTalks } from '../../data/testimonial'
-import Logo from '../../assets/logo/logo.png'
-import { NavLink , Link} from 'react-router-dom'
+
+import { Link} from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import {motion} from 'framer-motion'
 
 
 const Home = () => {
   const [menu , setMenu] = useState(false)
-  const func = ({isActive}) => isActive ? "nav-link active-link" : " nav-link"
 
   const bodyTag = document.getElementById('body')
   bodyTag.style.overflow = menu ? "hidden" : "";
@@ -55,43 +54,6 @@ const Home = () => {
 
   return (
     <div className='landing-page'>
-      <header className={menu && "blocked"}>
-        <div className="logo">
-          <img src={Logo} alt="" className='logo'/>
-        </div>
-        <nav className={menu && "opened"}>
-          <ul>
-            <NavLink 
-              className={func}
-            >
-              Speak with us
-            </NavLink>
-            <NavLink 
-              className={func}
-            >
-              What we do
-            </NavLink>
-            <NavLink 
-              className={func}
-            >
-              Login
-            </NavLink>
-            <NavLink 
-              className={func}
-            >
-              Sign Up
-            </NavLink>
-          </ul>
-        </nav>
-        <div className='mobile'
-          onClick={()=>setMenu(!menu)}
-        >
-          <Icon 
-            icon={menu ? "ic:sharp-close" : "ic:baseline-menu"} 
-            className={menu ? 'menu-btn close' :'menu-btn'}
-            />
-        </div>
-      </header>
         <section className='slide-section'>
           <Carousel
           >      
@@ -138,6 +100,7 @@ const Home = () => {
           </section>
       </main>
       <section className="testimony">
+      <div className='heading'>What our clients say about us</div>
       <AliceCarousel
         autoPlay
         autoPlayStrategy="none"
