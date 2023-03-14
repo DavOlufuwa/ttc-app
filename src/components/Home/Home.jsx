@@ -5,7 +5,7 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { slideImages } from '../../data/slideImages'
 import { testimonials , longTalks } from '../../data/testimonial'
-import { Link} from 'react-router-dom'
+import { Link, useLocation} from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import {motion} from 'framer-motion'
 import { blogData } from '../../data/blog';
@@ -33,7 +33,10 @@ const Home = () => {
       itemsFit:'contain'
     }
   };
+  
+  const location = useLocation()
 
+  console.log(location)
   const transition = {type:'spring', duration : 3}
 
   const items = testimonials.map((test, idx)=>(
@@ -132,7 +135,12 @@ const Home = () => {
             <div className='content'>
               <div className='title'>{article.title}</div>
               <div className='date'>{article.date}</div>
-              <Link className='blog-link'>read post</Link>
+              <Link 
+                className='blog-link'
+                state={{particularCard : blog.id}}
+                to="blog"
+                // this is where you stopped
+              >read post</Link>
             </div>
           </div>
         ))}
