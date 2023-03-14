@@ -103,6 +103,7 @@ const Home = () => {
               }
           </section>
       </main>
+      {/* TESTIMONY SECTION STARTS */}
       <section className="testimony">
       <div className='heading'>What our clients say about us</div>
         <AliceCarousel
@@ -117,16 +118,17 @@ const Home = () => {
           responsive={responsive}
         />
       </section>
+      {/* TESTIMONY SECTION ENDS */}
+      {/* BLOG SECTION STARTS */}
       <section className='blog-section'>
       <div className='heading'>Check out our blog posts</div>
-          {blog.slice(0, 3).map((article)=>(
+          {blog.slice(0, 4).map((article)=>(
           <div 
             key={article.id} 
             className='blog-card'
+            style={{backgroundImage: `url(${article.image})`}}
           >
-            <div className='blog-image'>
-              <img src={article.image}/>
-            </div>
+            <div className='backdrop'></div>
             <div className='content'>
               <div className='title'>{article.title}</div>
               <div className='date'>{article.date}</div>
@@ -135,13 +137,15 @@ const Home = () => {
           </div>
         ))}
       </section>
+      {/* BLOG SECTION ENDS */}
+      {/* NEWSLETTER SECTION STARTS */}
       <section className='newsletter'>
         <div className='heading'>
           <h3>SIGN UP FOR OUR NEWSLETTER</h3>
           <p>We're about empowering families with the latest fertility news, lets help you stay up to date</p>
         </div>
           <form>      
-            <div class="form-box">
+            <div className="form-box">
               <input type="email" id="email" placeholder='Email'/>
             </div>
             <div className='form-btn'>
@@ -151,6 +155,8 @@ const Home = () => {
             </div>
           </form>
       </section>
+      {/* NEWSLETTER SECTION ENDS */}
+      
       <footer>
         <section className="section-one">
           <div >
@@ -164,8 +170,8 @@ const Home = () => {
                 <label htmlFor="fullname">Full Name</label>
                 <input type="text" id="fullname" />
               </div>
-              <div class="form-box">
-                <label for="email">Email</label>
+              <div className="form-box">
+                <label htmlFor="email">Email</label>
                 <input type="email" id="email"/>
               </div>
               <div className="form-box">

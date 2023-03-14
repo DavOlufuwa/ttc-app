@@ -9,13 +9,13 @@ const HomeLayout = () => {
 
   return (
     <div>
-        <header className={menu && "blocked"}>
+        <header>
         <div className="logo">
           <Link to="">
             <img src={Logo} alt="" className='logo'/>
           </Link>
         </div>
-        <nav className={menu && "opened"}>
+        <nav className={menu ? "opened" :""}>
           <ul>
             <NavLink 
               className={func}
@@ -30,9 +30,9 @@ const HomeLayout = () => {
               What we do
             </NavLink>
             <NavLink 
+              to="blog"
               className={func}
               onClick={()=>setMenu(!menu)}
-              to="Blog"
             >
               Our Blog
             </NavLink>
